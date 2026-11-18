@@ -1,0 +1,125 @@
+
+### 1. USER REGISTRATION
+POST http://127.0.0.1:8000/api/register/
+Content-Type: application/json
+
+{
+    "username": "Ishwaryaaa",
+    "email": "aishu@gmail.com",
+    "password": "aishu@123"
+}
+
+### 2. TOKEN LOGIN
+POST http://127.0.0.1:8000/api/login/
+Content-Type: application/json
+
+{
+    "username": "Ishwarya",
+    "password": "aishu@123"
+}
+
+### 3. GET ALL NOTES
+GET http://127.0.0.1:8000/api/notes/
+Accept: application/json
+Authorization: Token YOUR_TOKEN
+
+### 4. CREATE NOTE
+POST http://127.0.0.1:8000/api/notes/
+Content-Type: application/json
+Authorization: Token YOUR_TOKEN
+
+{
+    "title": "Python Language",
+    "description": "Python basic to advance"
+}
+
+### 5. GET PARTICULAR NOTE
+GET http://127.0.0.1:8000/api/notes/1/
+Accept: application/json
+Authorization: Token YOUR_TOKEN
+
+### 6. UPDATE NOTE
+PUT http://127.0.0.1:8000/api/notes/2/
+Content-Type: application/json
+Authorization: Token YOUR_TOKEN
+
+{
+    "title": "Python Notes",
+    "description": "Python is a high-level, interpreted programming language known for its simplicity and readability. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming."
+}
+
+### 7. DELETE PARTICULAR NOTE
+DELETE http://127.0.0.1:8000/api/notes/2/
+Authorization: Token YOUR_TOKEN
+
+### 8. USER LOGOUT
+POST http://127.0.0.1:8000/api/logout/
+Authorization: Token YOUR_TOKEN
+
+### 9. DELETE USER ACCOUNT
+DELETE http://127.0.0.1:8000/user/delete/
+Authorization: Token YOUR_TOKEN
+
+### 10. JWT LOGIN
+POST http://127.0.0.1:8000/api/jwt_login/
+Content-Type: application/json
+
+{
+    "username": "Ishwaryaaa",
+    "password": "aishu@123"
+}
+
+### 11. JWT TOKEN REFRESH
+POST http://127.0.0.1:8000/api/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NDk4NDg1NiwiaWF0IjoxNzk0ODk4NDU2LCJqdGkiOiI4MWM0MzgyM2Y1MDQ0YTdhYjA0NzFlYTY0ZjljNzQyNCIsInVzZXJfaWQiOiI3In0.gjPBkX2Gch-4RFpHyO4PWFf0lw4dma3WMqtCFFc09xQ"
+}
+
+###
+GET http://127.0.0.1:8000/api/tasks/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0OTgyMDAyLCJpYXQiOjE3OTQ5ODE3MDIsImp0aSI6ImM3ZDYyZGY0N2I2YzRkMThiYTEzNjliNGJkMThlYzdhIiwidXNlcl9pZCI6IjcifQ.EXHCKbIjiCI2kiMl72mm1kVx1ZmcrwcvHIp5ntp05Fs
+
+
+### 
+POST http://127.0.0.1:8000/api/tasks/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0OTgyMDAyLCJpYXQiOjE3OTQ5ODE3MDIsImp0aSI6ImM3ZDYyZGY0N2I2YzRkMThiYTEzNjliNGJkMThlYzdhIiwidXNlcl9pZCI6IjcifQ.EXHCKbIjiCI2kiMl72mm1kVx1ZmcrwcvHIp5ntp05Fs
+
+{
+    "title" : "Pattern problem complex",
+    "description" : "Solve the following Python Pattern program?",
+    "due_date" : "2026-12-30"
+}
+
+###
+GET http://127.0.0.1:8000/api/tasks/6/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0OTgyMDAyLCJpYXQiOjE3OTQ5ODE3MDIsImp0aSI6ImM3ZDYyZGY0N2I2YzRkMThiYTEzNjliNGJkMThlYzdhIiwidXNlcl9pZCI6IjcifQ.EXHCKbIjiCI2kiMl72mm1kVx1ZmcrwcvHIp5ntp05Fs
+
+###
+PUT http://127.0.0.1:8000/api/tasks/6/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0OTgyMDAyLCJpYXQiOjE3OTQ5ODE3MDIsImp0aSI6ImM3ZDYyZGY0N2I2YzRkMThiYTEzNjliNGJkMThlYzdhIiwidXNlcl9pZCI6IjcifQ.EXHCKbIjiCI2kiMl72mm1kVx1ZmcrwcvHIp5ntp05Fs
+
+{
+    "title" : "Pattern problem complex",
+    "description" : "Solve the following Python Pattern program?",
+    "due_date" : "2026-11-20"
+}
+
+###
+DELETE http://127.0.0.1:8000/api/tasks/6/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0OTgyMDAyLCJpYXQiOjE3OTQ5ODE3MDIsImp0aSI6ImM3ZDYyZGY0N2I2YzRkMThiYTEzNjliNGJkMThlYzdhIiwidXNlcl9pZCI6IjcifQ.EXHCKbIjiCI2kiMl72mm1kVx1ZmcrwcvHIp5ntp05Fs
+
+# JWT LOGOUT
+###
+POST http://127.0.0.1:8000/api/jwt_logout/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0OTg1MTg4LCJpYXQiOjE3OTQ5ODQ4ODgsImp0aSI6ImNlZjc0MzdmNDg1MDRmOTc4ZGE3YWViMGM1ZGEwYTM0IiwidXNlcl9pZCI6IjgifQ.xpdD-5VGfJ9s_RG-YoOz6c6pNto0dvhI1hj2BPN-DpM
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTA3MTI4OCwiaWF0IjoxNzk0OTg0ODg4LCJqdGkiOiJhNGEzZjllZWNjYzg0NTM0YTAxYmU3NTg4NjZlNzI2YiIsInVzZXJfaWQiOiI4In0.-M2zGZCDln9GoiPLWgtrWfvmJqLw5eoambA1gDq16pM"
+}
